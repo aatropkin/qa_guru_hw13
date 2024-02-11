@@ -62,6 +62,9 @@ public class RegistrationTests {
         });
 
         step("Fill form", () -> {
+            if ($(".fc-consent-root").isDisplayed()) {
+                $(".fc-consent-root").$(byText("Consent")).click();
+            }
             $("#firstName").setValue("Alex");
             $("#lastName").setValue("Egorov");
             $("#userEmail").setValue("alex@egorov.com");
